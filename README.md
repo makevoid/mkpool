@@ -86,6 +86,13 @@ sudo cp litecoind /usr/bin
 ln -s /root/litecoin/src/litecoind /usr/bin
 
 
+# testnet network
+cd ~
+git clone git://github.com/xrobau/litecoin-testnet-box.git
+cd litecoin-testnet-box
+
+vi 1/litecoin.conf
+# edit username and password
 
 # stratum mining #######
 
@@ -116,3 +123,5 @@ python setup.py install
 cd ~
 cp stratum/stratum-mining/conf/config_sample.py stratum/stratum-mining/conf/config.py
 vi stratum/stratum-mining/conf/config.py
+# edit: wallet address, coindaemon and mysql settings [https://github.com/MPOS/php-mpos/wiki/Quick-Start-Guide#wiki-configuration]
+# db_name: stratum_pool
